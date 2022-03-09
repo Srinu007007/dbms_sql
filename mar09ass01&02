@@ -1,0 +1,261 @@
+SQL> create table student( sno number(3),sname varchar2(20),m number(3), p number(3), cs number(3));
+
+Table created.
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO                                                NUMBER(3)
+ SNAME                                              VARCHAR2(20)
+ M                                                  NUMBER(3)
+ P                                                  NUMBER(3)
+ CS                                                 NUMBER(3)
+
+SQL> insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks);
+Enter value for enter_sno: 101
+Enter value for enter_sname: sai ram
+Enter value for enter_maths_marks: 98
+Enter value for enter_phy_marks: 87
+Enter value for enter_computer_marks: 92
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(101,'sai ram',98,87,92)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 102
+Enter value for enter_sname: sai baba
+Enter value for enter_maths_marks: 78
+Enter value for enter_phy_marks: 67
+Enter value for enter_computer_marks: 89
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(102,'sai baba',78,67,89)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 103
+Enter value for enter_sname: venkataramana
+Enter value for enter_maths_marks: 56
+Enter value for enter_phy_marks: 89
+Enter value for enter_computer_marks: 56
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(103,'venkataramana',56,89,56)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 104
+Enter value for enter_sname: laxmi
+Enter value for enter_maths_marks: 89
+Enter value for enter_phy_marks: 90
+Enter value for enter_computer_marks: 80
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(104,'laxmi ',89,90,80)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 105
+Enter value for enter_sname: laxmi durga
+Enter value for enter_maths_marks: 78
+Enter value for enter_phy_marks: 89
+Enter value for enter_computer_marks: 90
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(105,'laxmi durga',78,89,90)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 106
+Enter value for enter_sname: ram
+Enter value for enter_maths_marks: 67
+Enter value for enter_phy_marks: 98
+Enter value for enter_computer_marks: 90
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(106,'ram',67,98,90)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 107
+Enter value for enter_sname: raim
+Enter value for enter_maths_marks: 90
+Enter value for enter_phy_marks: 67
+Enter value for enter_computer_marks: 56
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(107,'raim',90,67,56)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 108
+Enter value for enter_sname: siva
+Enter value for enter_maths_marks: 78
+Enter value for enter_phy_marks: 89
+Enter value for enter_computer_marks: 77
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(108,'siva',78,89,77)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 109
+Enter value for enter_sname: siva krishna
+Enter value for enter_maths_marks: 89
+Enter value for enter_phy_marks: 78
+Enter value for enter_computer_marks: 89
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(109,'siva krishna',89,78,89)
+
+1 row created.
+
+SQL> /
+Enter value for enter_sno: 110
+Enter value for enter_sname: ravi
+Enter value for enter_maths_marks: 56
+Enter value for enter_phy_marks: 88
+Enter value for enter_computer_marks: 99
+old   1: insert into student values(&enter_sno,'&Enter_sname',&enter_maths_marks,&enter_phy_marks,&enter_computer_marks)
+new   1: insert into student values(110,'ravi',56,88,99)
+
+1 row created.
+
+SQL> select * from student;
+
+       SNO SNAME                         M          P         CS
+---------- -------------------- ---------- ---------- ----------
+       101 sai ram                      98         87         92
+       102 sai baba                     78         67         89
+       103 venkataramana                56         89         56
+       104 laxmi                        89         90         80
+       105 laxmi durga                  78         89         90
+       106 ram                          67         98         90
+       107 raim                         90         67         56
+       108 siva                         78         89         77
+       109 siva krishna                 89         78         89
+       110 ravi                         56         88         99
+
+10 rows selected.
+
+SQL> alter table student add (tot number(3),avg number(4,2));
+
+Table altered.
+
+SQL> select * from student;
+
+       SNO SNAME                         M          P         CS        TOT
+---------- -------------------- ---------- ---------- ---------- ----------
+       AVG
+----------
+       101 sai ram                      98         87         92
+
+
+       102 sai baba                     78         67         89
+
+
+       103 venkataramana                56         89         56
+
+
+
+       SNO SNAME                         M          P         CS        TOT
+---------- -------------------- ---------- ---------- ---------- ----------
+       AVG
+----------
+       104 laxmi                        89         90         80
+
+
+       105 laxmi durga                  78         89         90
+
+
+       106 ram                          67         98         90
+
+
+
+       SNO SNAME                         M          P         CS        TOT
+---------- -------------------- ---------- ---------- ---------- ----------
+       AVG
+----------
+       107 raim                         90         67         56
+
+
+       108 siva                         78         89         77
+
+
+       109 siva krishna                 89         78         89
+
+
+
+       SNO SNAME                         M          P         CS        TOT
+---------- -------------------- ---------- ---------- ---------- ----------
+       AVG
+----------
+       110 ravi                         56         88         99
+
+
+
+10 rows selected.
+
+SQL> update student set tot=m+p+cs;
+
+10 rows updated.
+
+SQL> update student set avg=tot/3;
+
+10 rows updated.
+
+SQL> select * from student;
+
+       SNO SNAME                         M          P         CS        TOT
+---------- -------------------- ---------- ---------- ---------- ----------
+       AVG
+----------
+       101 sai ram                      98         87         92        277
+     92.33
+
+       102 sai baba                     78         67         89        234
+        78
+
+       103 venkataramana                56         89         56        201
+        67
+
+
+       SNO SNAME                         M          P         CS        TOT
+---------- -------------------- ---------- ---------- ---------- ----------
+       AVG
+----------
+       104 laxmi                        89         90         80        259
+     86.33
+
+       105 laxmi durga                  78         89         90        257
+     85.67
+
+       106 ram                          67         98         90        255
+        85
+
+
+       SNO SNAME                         M          P         CS        TOT
+---------- -------------------- ---------- ---------- ---------- ----------
+       AVG
+----------
+       107 raim                         90         67         56        213
+        71
+
+       108 siva                         78         89         77        244
+     81.33
+
+       109 siva krishna                 89         78         89        256
+     85.33
+
+
+       SNO SNAME                         M          P         CS        TOT
+---------- -------------------- ---------- ---------- ---------- ----------
+       AVG
+----------
+       110 ravi                         56         88         99        243
+        81
+
+
+10 rows selected.
+
+SQL>
