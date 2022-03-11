@@ -1,0 +1,114 @@
+SQL> conn system1/system1
+Connected.
+SQL> create table employee(
+  2  eno number(3),
+  3  ename varchar2(20),
+  4  design varchar2(20),
+  5  salary number(7,2));
+
+Table created.
+
+
+SQL> grant select,insert,update on employee to system2;
+
+Grant succeeded.
+
+
+
+
+
+
+
+
+
+
+
+
+
+SQL> conn system2/system2
+Connected.
+SQL> insert into system1.employee values(
+  2  &eno,'&ename','&design',&salary);
+Enter value for eno: 101
+Enter value for ename: ravi
+Enter value for design: hr
+Enter value for salary: 46000
+old   2: &eno,'&ename','&design',&salary)
+new   2: 101,'ravi','hr',46000)
+
+1 row created.
+
+SQL> /
+Enter value for eno: 102
+Enter value for ename: raju
+Enter value for design: devaloper
+Enter value for salary: 34000
+old   2: &eno,'&ename','&design',&salary)
+new   2: 102,'raju','devaloper',34000)
+
+1 row created.
+
+SQL> /
+Enter value for eno: 103
+Enter value for ename: rakesh
+Enter value for design: tester
+Enter value for salary: 30000
+old   2: &eno,'&ename','&design',&salary)
+new   2: 103,'rakesh','tester',30000)
+
+1 row created.
+
+SQL> /
+Enter value for eno: 104
+Enter value for ename: ramesh
+Enter value for design: programmer
+Enter value for salary: 56000
+old   2: &eno,'&ename','&design',&salary)
+new   2: 104,'ramesh','programmer',56000)
+
+1 row created.
+
+SQL> /
+Enter value for eno: 105
+Enter value for ename: mahesh
+Enter value for design: ass-programer
+Enter value for salary: 25000
+old   2: &eno,'&ename','&design',&salary)
+new   2: 105,'mahesh','ass-programer',25000)
+
+1 row created.
+
+
+SQL> commit;
+
+Commit complete.
+
+SQL> savepoint po1;
+
+Savepoint created.
+
+SQL> rollback to po1;
+
+Rollback complete.
+
+
+SQL> select * from system1.employee;
+
+       ENO ENAME                DESIGN                   SALARY
+---------- -------------------- -------------------- ----------
+       101 ravi                 hr                        46000
+       102 raju                 devaloper                 34000
+       103 rakesh               tester                    30000
+       104 ramesh               programmer                56000
+       105 mahesh               ass-programer             25000
+
+
+SQL> connect system1/system1;
+Connected.
+
+SQL> revoke select,insert,update on employee from system2;
+
+Revoke succeeded.
+
+
+
